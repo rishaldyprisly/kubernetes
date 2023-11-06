@@ -185,9 +185,12 @@ spec:
       labels:
         k8s-app: kubernetes-dashboard
     spec:
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: kubernetes-dashboard
-          image: kubernetesui/dashboard:v2.2.0
+          image: kubernetesui/dashboard:v2.7.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8443
@@ -195,18 +198,16 @@ spec:
           args:
             - --auto-generate-certificates
             - --namespace=kubernetes-dashboard
-            #- --tls-cert-file=dashboard.crt
-            #- --tls-key-file=dashboard.key
             # Uncomment the following line to manually specify Kubernetes API server Host
             # If not specified, Dashboard will attempt to auto discover the API server and connect
             # to it. Uncomment only if the default does not work.
             # - --apiserver-host=http://my-address:port
-          #volumeMounts:
-          #  - name: kubernetes-dashboard-certs
-          #    mountPath: /home/k8s-dashboard/certs/
+          volumeMounts:
+            - name: kubernetes-dashboard-certs
+              mountPath: /certs
               # Create on-disk volume to store exec logs
-          #  - mountPath: /tmp
-          #    name: tmp-volume
+            - mountPath: /tmp
+              name: tmp-volume
           livenessProbe:
             httpGet:
               scheme: HTTPS
@@ -268,12 +269,13 @@ spec:
     metadata:
       labels:
         k8s-app: dashboard-metrics-scraper
-      annotations:
-        seccomp.security.alpha.kubernetes.io/pod: 'runtime/default'
     spec:
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: dashboard-metrics-scraper
-          image: kubernetesui/metrics-scraper:v1.0.6
+          image: kubernetesui/metrics-scraper:v1.0.8
           ports:
             - containerPort: 8000
               protocol: TCP
