@@ -7,7 +7,7 @@
 
 # Inside Boiler Plate
 
-![Alt text](relative%20monitoring-stack/boilerplate.png?raw=true "Boilerplate")
+![Alt text](relative%20monitoring-stack/Boilerplate.png?raw=true "Boilerplate")
 
 
 
