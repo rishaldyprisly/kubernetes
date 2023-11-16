@@ -7,7 +7,7 @@
 
 # Inside Boiler Plate
 
-![]([https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png](https://raw.githubusercontent.com/rishaldyprisly/kubernetes/main/monitoring-stack/Boilerplate.png))
+![Alt text](relative%20monitoring-stack/boilerplate.png?raw=true "Boilerplate")
 
 
 
