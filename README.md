@@ -1,4 +1,4 @@
-### Boilerplate / Monitoring Stack
+### Boilerplate
 - This tools are prepared by @rishaldy7
 - This file runs on Docker Compose V3 or newer versions
 - This file will creates docker stack to monitor single or multiple servers / nodes.
@@ -7,9 +7,7 @@
 
 # Inside Boiler Plate
 
-![Alt text](relative%20monitoring-stack/Boilerplate.png?raw=true "Boilerplate")
-
-
+[![Rishaldy Boilerplate ](https://raw.githubusercontent.com/rishaldyprisly/kubernetes/main/monitoring-stack/Boilerplate.png "Rishaldy Boilerplate ")](https://raw.githubusercontent.com/rishaldyprisly/kubernetes/main/monitoring-stack/Boilerplate.png "Rishaldy Boilerplate ")
 
 
 ###Prometheus
