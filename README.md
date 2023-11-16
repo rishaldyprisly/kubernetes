@@ -10,25 +10,25 @@
 [![Rishaldy Boilerplate ](https://raw.githubusercontent.com/rishaldyprisly/kubernetes/main/monitoring-stack/Boilerplate.png "Rishaldy Boilerplate ")](https://raw.githubusercontent.com/rishaldyprisly/kubernetes/main/monitoring-stack/Boilerplate.png "Rishaldy Boilerplate ")
 
 
-###Prometheus
+### Prometheus
 
 > Prometheus is log manager that used as main log collector or manager. All of running instances log must be sent to Prometheus before you can visualize or monitor the status of the instance with Grafana or any other softwares
 
 
-###CAdvisor
+### CAdvisor
 
 > CAdvisor or Container Advisor is a small tool that collect all of instance health status. CAdvisor will store all of the instance anomaly which the data must be used to conduct audits, monitoring, and more. The instance health that will be colected such as:
 1.  When the containers are consuming almost all of allocated CPU or memory.
 2. When the containers are experiencing traffic spike / concurrent anomaly
 3. When the contiainers is being killed by humans or by the Orchestrator like Kubernetes or by the Docker Engine itself
 
-###Grafana
+### Grafana
 > Grafana is a tool to visualize all of the log and instances health status in real time. Please note that Grafana needs Prometheus to work. Once Prometheus is up, you can grab all of the data collected by Prometheus to be visualized in Grafana
 
-###Node Exporter
+### Node Exporter
 > Node Exporter is a tool to export every log in the main server / host / nodes. Almost the same as CAdvisot, Node Exporter will grab any essentials data like Kernel Status, CPU consumption, Swap Memory
 
-###Ports
+### Ports
 |        Tools        | Node Ports  | Continer Ports  | Volumes |
 | :-----------:|:----------:|:------------:|:-----:|
 | Prometheus      |      9090      |        9090        | Isolated |
@@ -39,9 +39,9 @@
 If you are preparing a server / node from scratch, you may chose different ports as well, please consult or read more about port alocation depending on specific tools / software you will use as well.
 
 
-###Other Configuration
+### Other Configuration
 
-####Node
+#### Node
 
 File location: `/etc/prometheus/prometheus.yml`
 
@@ -74,7 +74,9 @@ scrape_configs:
 		  #Grab data collected by CAdvisor
 ```
 
-###Things To Consider
+### Things To Consider
 
 > Until now, Prometheus, CAdvisor, and Node Exporter don't have an authentication method to visit their web application interface, please use the BoilerPlate if only you know what you're doing
 
+### Fork
+[GitHub](https://github.com/rishaldyprisly "GitHub") Rishaldy Prisly
